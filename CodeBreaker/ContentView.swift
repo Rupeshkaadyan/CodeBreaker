@@ -9,27 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-       
-    
-        
-        VStack {
-            Image(systemName: "timelapse")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            Text("so yeah")
-           
+        VStack{
+            pegs(colour: [.red , .green , .green , .yellow])
+            pegs(colour: [.red , .blue , .green , .red])
+            pegs(colour: [.red , .yellow , .green, .blue ])
+            
+            
+            
+            
+            
         }
         .padding()
-        .foregroundStyle(.yellow)
-        .fontWeight(.heavy)
-        .font(.title3)
+    }
+    func pegs(colour: Array<Color>) -> some View{
+        HStack {
+            ForEach(colour.indices, id: \.self) { index in
+                RoundedRectangle(cornerRadius: 10).aspectRatio(1,contentMode: .fit).foregroundStyle(colour[index])}
+            
+            matchMarker(Matches: [.exact, .inexact, .noMatch, .exact])
+        }
+   
+        
         
     }
-        
-        
+    
     
 }
+
+
 
 #Preview {
     ContentView()
