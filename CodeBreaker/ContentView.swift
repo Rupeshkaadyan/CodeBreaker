@@ -13,7 +13,7 @@ struct ContentView: View {
             pegs(colour: [.red , .green , .green , .yellow])
             pegs(colour: [.red , .blue , .green , .red])
             pegs(colour: [.red , .yellow , .green, .blue ])
-            pegs(colour: [.red , .yellow , .green, .blue ]) // extra one 
+            pegs(colour: [.red , .yellow , .green, .orange ]) // extra one
             
             
             
